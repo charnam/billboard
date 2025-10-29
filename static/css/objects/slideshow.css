@@ -35,6 +35,11 @@
     transition-property: background-color, transform;
     transform: scale(0.7);
 }
+
+body.debug .bb-slideshow-dot {
+    cursor: pointer;
+}
+
 .bb-slideshow-dot.current-slide {
 	background: #fff;
     transform: scale(1);

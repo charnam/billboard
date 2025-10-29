@@ -1,6 +1,6 @@
 # Setting up billboard content
 
-This README is a work-in-progress. Check this document later.
+This README is a work-in-progress. Check this document later. Alternatively, you may view `content.js` as well as the source files *(ImageObject.js, GenericObject.js)* for sample usage.
 
 ## Setup
 

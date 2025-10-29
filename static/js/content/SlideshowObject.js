@@ -39,7 +39,9 @@ class SlideshowObject extends GenericObject {
         slideshowDotsContainer.classList.add("bb-slideshow-dots");
         slideshowContainer.appendChild(slideshowDotsContainer);
         
-        for(let slide of this.slides) {
+        for(const slideIndex in this.slides) {
+            const slide = this.slides[slideIndex];
+            
             const slideContainer = document.createElement("div");
             slideContainer.classList.add("bb-slide");
             slideContainer.classList.add("bb-container");
@@ -49,6 +51,11 @@ class SlideshowObject extends GenericObject {
             const slideshowDot = document.createElement("div");
             slideshowDot.classList.add("bb-slideshow-dot");
             slideshowDotsContainer.appendChild(slideshowDot);
+            
+            slideshowDot.addEventListener("click", () => {
+                this.currentSlide = slideIndex;
+                updateSlideshow();
+            })
             
             slide.render(slideContainer);
         }
