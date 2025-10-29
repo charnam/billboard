@@ -1,0 +1,9 @@
+@import url("./loader.css");
+@import url("./globals.css");
+
+
+body {
+    background: var(--page-color);
+    color: var(--text-color);
+    font-family: var(--text-font);
+}

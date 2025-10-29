@@ -1,0 +1,11 @@
+@import url("./globals.css");
+
+
+#content-frame {
+    width: var(--display-width);
+    height: var(--display-height);
+    transform: translate(-50%, -50%) scale(0.5);
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+}

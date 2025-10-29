@@ -1,0 +1,7 @@
+@import url("../../config/display.css");
+
+:root {
+    --page-color: #000;
+    --text-color: #fff;
+    --text-font: arial, sans-serif;
+}
