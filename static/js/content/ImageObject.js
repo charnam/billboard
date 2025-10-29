@@ -1,27 +1,56 @@
 import GenericObject from "./GenericObject.js";
 
 class ImageObject extends GenericObject {
+    static validFitArguments = ["contain", "fill", "stretch"];
+    
+    constructor(details) {
+        super(details);
+        
+        if(typeof details.src !== "string")
+            throw new Error("Non-string value passed to ImageObject src");
+        
+        if(details.src.startsWith("files/")) {
+            // Load image file from config/content/files/
+            this.src = "./config/content/"+details.src;
+        } else {
+            // Load from webpage or relative filepath to webroot
+            this.src = details.src;
+        }
+        
+        if(ImageObject.validFitArguments.includes(details.fit))
+            this.fit = details.fit;
+    }
+    
     render(container) {
         super.render(container);
         
+        const imageContainer = document.createElement("div");
+        imageContainer.classList.add("bb-object");
+        imageContainer.classList.add("bb-image");
+        
+        // _applyClasses should be run at least once per object render
+        this._applyClasses(imageContainer);
+        
         const image = document.createElement("img");
         image.src = this.src;
-        
-        container.appendChild(image);
-    }
-    
-    constructor(src) {
-        if(typeof src !== "string")
-            throw new Error("Non-string value passed to ImageObject");
-        
-        if(src.startsWith("files/")) {
-            src = "./config/content/"+src;
+        image.onload = () => {
+            // We need to set the aspect ratio in the style tag, as
+            // CSS currently does not allow for <img> elements to
+            // automatically fit their containers.
+            imageContainer.setAttribute("style", `
+                --image-aspect-ratio: ${image.width} / ${image.height};
+            `)
         }
         
-        super({src});
+        if(this.fit) {
+            imageContainer.classList.add("fit-"+this.fit);
+        }
         
-        this.src = src;
+        imageContainer.appendChild(image);
+        
+        container.appendChild(imageContainer);
     }
+    
 }
 
 export default ImageObject;

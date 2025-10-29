@@ -1,9 +1,47 @@
 @import url("./loader.css");
 @import url("./globals.css");
+@import url("./billboard.css");
+@import url("./objects/main.css");
 
+@import url("../../config/content/content.css");
 
 body {
     background: var(--page-color);
     color: var(--text-color);
     font-family: var(--text-font);
+}
+
+body:not(.debug) {
+    cursor: none;
+}
+
+body[setup-error]:before {
+    content: "Sorry, but a fatal error has occurred.";
+    position: fixed;
+    inset: 0;
+    background: #000c;
+    color: #f99;
+    
+    font-style: italic;
+    font-size: 5vw;
+    
+    padding: 2vw;
+    z-index: 100000;
+}
+
+body[setup-error]:after {
+    content: attr(setup-error);
+    
+    position: fixed;
+    inset: 0;
+    color: #f00;
+    
+    padding: 2vw;
+    padding-top: 10vw;
+    box-sizing: border-box;
+    z-index: 100001;
+    
+    font-size: 17px;
+    font-family: monospace;
+    white-space: pre-wrap;
 }

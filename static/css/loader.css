@@ -1,10 +1,10 @@
 
 #load-banner {
-    font-size: 4vmin;
+    --load-text: "Loading...";
+    font-size: 8vmin;
     transition: 0.4s ease-in-out;
     transition-property: opacity, filter;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
     margin: 0;
     position: fixed;
     background: var(--page-color);
@@ -12,9 +12,15 @@
     justify-content: center;
     align-items: center;
     color: white;
+    z-index: 10000;
+}
+
+#load-banner:before {
+    content: var(--load-text);
 }
 
 body.page-loaded #load-banner {
     opacity: 0;
     filter: brightness(0.8);
+    pointer-events: none;
 }

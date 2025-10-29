@@ -1,3 +1,9 @@
+/**
+ * The display's width and height should be defined here for
+ * debug.html to display things correctly. Update it to
+ * reflect your display's true properties.
+ */
+
 :root {
     --display-width: 1080px;
     --display-height: 1920px;

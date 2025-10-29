@@ -1,6 +1,6 @@
 # Setting up billboard content
 
-This is a work-in-progress. Check this document later.
+This README is a work-in-progress. Check this document later.
 
 ## Setup
 

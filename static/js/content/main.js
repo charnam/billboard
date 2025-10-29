@@ -6,9 +6,11 @@
 import GenericObject from "./GenericObject.js";
 import SlideshowObject from "./SlideshowObject.js";
 import ImageObject from "./ImageObject.js";
+import ContainerObject from "./ContainerObject.js";
 
 export {
     GenericObject,
     SlideshowObject,
-    ImageObject
+    ImageObject,
+    ContainerObject
 };

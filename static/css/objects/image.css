@@ -1,0 +1,26 @@
+
+.bb-image {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    overflow: hidden;
+}
+
+
+.bb-image.fit-stretch img {
+    width: 100%;
+    height: 100%;
+}
+
+.bb-image.fit-fill img {
+	aspect-ratio: var(--image-aspect-ratio);
+	width: auto;
+    height: 100%;
+}
+
+.bb-image.fit-contain img {
+	aspect-ratio: var(--image-aspect-ratio);
+	width: 100%;
+    height: auto;
+}
