@@ -1,3 +1,10 @@
 #load-banner {
     --load-text: "Billboard";
 }
+
+.bb-image.fit-contain img {
+	margin: 3vmin;
+	border-radius: 3vmin;
+	border: 1px solid #0009;
+	box-shadow: 0 1vmin 2vmin #0003;
+}

@@ -1,0 +1,9 @@
+
+
+.bb-flexbox {
+    display: flex;
+}
+
+.bb-flexbox:not(.bb-flexbox-horizontal) {
+    flex-direction: column;
+}

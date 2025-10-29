@@ -1,6 +1,8 @@
 import GenericObject from "./GenericObject.js";
 
 class ContainerObject extends GenericObject {
+    children = [];
+    
     constructor(details) {
         super(details);
         
@@ -18,7 +20,11 @@ class ContainerObject extends GenericObject {
         element.classList.add("bb-object");
         element.classList.add("bb-container");
         
-        GenericObject._applyClasses(this.classes);
+        this._applyClasses(element);
+        
+        for(let child of this.children) {
+            child.render(element);
+        }
         
         container.appendChild(element);
     }

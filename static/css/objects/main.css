@@ -1,6 +1,7 @@
 
 @import url("./slideshow.css");
 @import url("./image.css");
+@import url("./flexbox.css");
 
 .bb-object {
     width: 100%;
