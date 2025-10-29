@@ -55,7 +55,8 @@ class SlideshowObject extends GenericObject {
             slideshowDot.addEventListener("click", () => {
                 this.currentSlide = slideIndex;
                 updateSlideshow();
-            })
+                clearInterval(slideshowUpdateInterval);
+            });
             
             slide.render(slideContainer);
         }
