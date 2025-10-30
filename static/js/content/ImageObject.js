@@ -1,4 +1,5 @@
 import GenericObject from "./GenericObject.js";
+import parseSrc from "../parseSrc.js";
 
 class ImageObject extends GenericObject {
     static validFitArguments = ["contain", "fill", "stretch"];
