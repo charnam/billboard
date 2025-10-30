@@ -1,0 +1,22 @@
+{
+  "name": "billboard",
+  "version": "1.0.0",
+  "description": "An HTML application for creating and managing billboard content",
+  "main": "electron/electron-main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charnam/billboard.git"
+  },
+  "author": "CHARNAM",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/charnam/billboard/issues"
+  },
+  "homepage": "https://github.com/charnam/billboard#readme",
+  "dependencies": {
+    "electron": "^39.0.0"
+  }
+}

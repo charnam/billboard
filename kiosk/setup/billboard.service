@@ -1,0 +1,43 @@
+
+# This systemd service runs Billboard in kiosk mode on tty3.
+
+# Adapted from:
+# https://github.com/cage-kiosk/cage/wiki/Starting-Cage-on-boot-with-systemd
+
+# Change your login name from 'admin' here.
+
+[Unit]
+Description=Billboard Kiosk
+After=systemd-user-sessions.service plymouth-quit-wait.service
+Before=graphical.target
+Wants=dbus.socket systemd-logind.service
+After=dbus.socket systemd-logind.service
+Conflicts=getty@tty3.service
+After=getty@tty3.service
+
+[Service]
+Type=simple
+## IMPORTANT: Change the below three lines if your username is different.
+User=admin
+ExecStart=/home/admin/billboard/kiosk/start-kiosk.sh
+WorkingDirectory=/home/admin/billboard/
+
+Restart=always
+
+UtmpIdentifier=tty3
+UtmpMode=user
+
+# A virtual terminal is needed.
+TTYPath=/dev/tty3
+TTYReset=yes
+TTYVHangup=yes
+TTYVTDisallocate=yes
+# Fail to start if not controlling the virtual terminal.
+StandardInput=tty-fail
+
+# Set up a full (custom) user session for the user, required by Cage.
+PAMName=cage
+
+[Install]
+WantedBy=graphical.target
+Alias=display-manager.service

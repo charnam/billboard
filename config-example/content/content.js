@@ -1,3 +1,8 @@
+/**
+ * This is an example content script for your billboard. You
+ * may adapt it as you see fit for your project.
+ */
+
 import * as Content from "../../static/js/content/main.js";
 
 export default new Content.SlideshowObject({

@@ -1,1 +1,7 @@
-config/content
+
+# Node-specific directories
+node_modules/
+package-lock.json
+
+# Configuration directory
+config
