@@ -15,8 +15,9 @@ function parseSrc(src) {
     if(src.startsWith("./files/"))
         return "./config/content/"+src;
     
-    // Relative file paths shouldn't be outside of files/
-    if(src.startsWith("./"))
+    // Relative file paths shouldn't be outside of files/ - Allow
+    // for going up a directory if needed
+    if(src.startsWith("./") || src.startsWith("../"))
         return "./config/content/files/"+src;
     
     return src;
