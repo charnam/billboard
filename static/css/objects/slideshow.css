@@ -2,6 +2,8 @@
 .bb-slideshow {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
 .bb-slideshow-slides {
@@ -18,6 +20,11 @@
     transition: left 0.5s ease-in-out;
     left: calc(var(--current-slide) * -100%);
     flex: none;
+}
+
+.bb-slide > .bb-object {
+    width: 100%;
+    height: 100%;
 }
 
 .bb-slideshow-dots {

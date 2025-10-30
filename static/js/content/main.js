@@ -9,6 +9,7 @@ import ImageObject from "./ImageObject.js";
 import ContainerObject from "./ContainerObject.js";
 import FlexboxObject from "./FlexboxObject.js";
 import SlideshowObject from "./SlideshowObject.js";
+import VideoObject from "./VideoObject.js";
 
 export {
     GenericObject,
@@ -17,4 +18,5 @@ export {
     ContainerObject,
     FlexboxObject,
     SlideshowObject,
+    VideoObject
 };

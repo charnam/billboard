@@ -10,19 +10,22 @@ export default new Content.SlideshowObject({
                     text: "First Slide"
                 }),
                 new Content.ImageObject({
-                    src: "https://picsum.dev/300/200",
+                    src: "https://picsum.photos/720/480",
                     fit: "contain"
                 }),
                 new Content.ImageObject({
-                    src: "https://picsum.dev/300/200",
+                    src: "files/magenta_flowers.jpg",
                     fit: "contain",
                     class: "my-favorite-image cool-image"
                 })
             ],
         }),
         new Content.ImageObject({
-            src: "https://picsum.dev/300/200",
+            src: "files/westphalia.jpg",
             fit: "fill"
+        }),
+        new Content.VideoObject({
+            src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         })
     ]
 });

@@ -2,6 +2,8 @@ import GenericObject from "./GenericObject.js";
 import parseSrc from "../parseSrc.js";
 
 class VideoObject extends GenericObject {
+    muted = true;
+    
     constructor(details) {
         super(details);
         
@@ -9,6 +11,9 @@ class VideoObject extends GenericObject {
             throw new Error("Non-string value passed to videoObject src");
         
         this.src = parseSrc(details.src);
+        
+        if(typeof details.muted !== "undefined")
+            this.muted = details.muted;
     }
     
     render(container) {
@@ -22,12 +27,15 @@ class VideoObject extends GenericObject {
         this._applyClasses(videoContainer);
         
         const video = document.createElement("video");
-        video.src = this.src;
-        video.onload = () => {
-            videoContainer.setAttribute("style", `
-                --video-aspect-ratio: ${video.width} / ${video.height};
-            `)
+        
+        video.onloadedmetadata = () => {
+            videoContainer.setAttribute("style", 
+                `--video-aspect-ratio: ${video.videoWidth} / ${video.videoHeight};`);
         }
+        
+        video.autoplay = true;
+        video.muted = this.muted;
+        video.src = this.src;
         
         videoContainer.appendChild(video);
         

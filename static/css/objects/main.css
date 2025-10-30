@@ -2,10 +2,13 @@
 @import url("./slideshow.css");
 @import url("./image.css");
 @import url("./flexbox.css");
+@import url("./video.css");
 
+/**
+ * The .bb-object class, if any adjustments are needed,
+ * will have those adjustments in this file.
+ */
 .bb-object {
-    width: 100%;
-    height: 100%;
 }
 
 .bb-text {

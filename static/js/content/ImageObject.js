@@ -32,9 +32,8 @@ class ImageObject extends GenericObject {
             // We need to set the aspect ratio in the style tag, as
             // CSS currently does not allow for <img> elements to
             // automatically fit their containers.
-            imageContainer.setAttribute("style", `
-                --image-aspect-ratio: ${image.width} / ${image.height};
-            `)
+            imageContainer.setAttribute("style", 
+                `--image-aspect-ratio: ${image.width} / ${image.height};`);
         }
         
         if(this.fit) {

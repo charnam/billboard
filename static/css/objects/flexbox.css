@@ -2,6 +2,7 @@
 
 .bb-flexbox {
     display: flex;
+    justify-content: space-evenly;
 }
 
 .bb-flexbox:not(.bb-flexbox-horizontal) {
