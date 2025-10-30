@@ -9,13 +9,7 @@ class ImageObject extends GenericObject {
         if(typeof details.src !== "string")
             throw new Error("Non-string value passed to ImageObject src");
         
-        if(details.src.startsWith("files/")) {
-            // Load image file from config/content/files/
-            this.src = "./config/content/"+details.src;
-        } else {
-            // Load from webpage or relative filepath to webroot
-            this.src = details.src;
-        }
+        this.src = parseSrc(details.src);
         
         if(ImageObject.validFitArguments.includes(details.fit))
             this.fit = details.fit;

@@ -3,15 +3,12 @@ import ContainerObject from "./ContainerObject.js";
 
 class FlexboxObject extends ContainerObject {
     constructor(details) {
-        let classes = ["bb-flexbox"]
+        super(details);
+        
+        this.classes.push("bb-flexbox");
         
         if(details.direction == "horizontal")
-            classes.push("bb-flexbox-horizontal");
-        
-        if(Array.isArray(details.classes))
-            classes.push(...details.classes);
-        
-        super({...details, classes});
+            this.classes.push("bb-flexbox-horizontal");
     }
 }
 

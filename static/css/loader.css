@@ -1,4 +1,16 @@
 
+@keyframes fadeInLoader {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 #load-banner {
     --load-text: "Loading...";
     font-size: 8vmin;
@@ -17,6 +29,7 @@
 
 #load-banner:before {
     content: var(--load-text);
+    animation: fadeInLoader 0.75s ease-in-out;
 }
 
 body.page-loaded #load-banner {

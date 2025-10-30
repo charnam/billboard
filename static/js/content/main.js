@@ -4,17 +4,17 @@
  */
 
 import GenericObject from "./GenericObject.js";
-import SlideshowObject from "./SlideshowObject.js";
+import TextObject from "./TextObject.js";
 import ImageObject from "./ImageObject.js";
-
 import ContainerObject from "./ContainerObject.js";
 import FlexboxObject from "./FlexboxObject.js";
+import SlideshowObject from "./SlideshowObject.js";
 
 export {
     GenericObject,
-    SlideshowObject,
+    TextObject,
     ImageObject,
-    
     ContainerObject,
     FlexboxObject,
+    SlideshowObject,
 };

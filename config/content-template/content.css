@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:slnt,wght@-11..11,200..1000&display=swap');
+
+:root {
+    --text-font: 'Cairo', sans-serif;
+}
+
 #load-banner {
     --load-text: "Billboard";
 }
@@ -7,4 +13,10 @@
 	border-radius: 3vmin;
 	border: 1px solid #0009;
 	box-shadow: 0 1vmin 2vmin #0003;
+}
+
+.bb-text.title {
+    font-size: 5vmin;
+    margin: 4vmin;
+    font-weight: bold;
 }
