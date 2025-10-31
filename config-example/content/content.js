@@ -30,7 +30,7 @@ export default new Content.SlideshowObject({
             fit: "fill"
         }),
         new Content.VideoObject({
-            src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            src: "https://cdn.free-stock.video/2252023/water-yellow-nature-underwater-fruit-lemon-splash-73926-small.mp4"
         })
     ]
 });

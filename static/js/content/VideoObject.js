@@ -34,6 +34,7 @@ class VideoObject extends GenericObject {
         }
         
         video.autoplay = true;
+        video.loop = true;
         video.muted = this.muted;
         video.src = this.src;
         
