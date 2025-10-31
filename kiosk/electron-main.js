@@ -11,7 +11,8 @@ const { app, BrowserWindow } = require('electron/main');
 
 function createWindow () {
     const win = new BrowserWindow({
-        fullscreen: true
+        fullscreen: true,
+        backgroundColor: "black"
     });
 
     // The working directory should be the root directory
