@@ -25,4 +25,4 @@ To test the Electron kiosk mode on a non-Pi, run `npm install` in the project ro
 
 GNU Affero GPL 3.0 - See LICENSE for more details.
 
-The config/ directory shall always be licensed under a CC0 license. You may modify the configuration of this application
+The sample `config/` directory shall always be licensed under a CC0 license. You may modify the example configuration of this application without sharing any of those changes with the public.
