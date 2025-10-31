@@ -12,7 +12,10 @@
 # Also see: billboard.service
 
 # Ensure we're running in the project root
-cd ~/billboard
+if ! cd /home/admin/billboard; then
+    echo "/home/admin/billboard not found";
+    exit;
+fi
 
 # Check if running as root. If not, quit now.
 if [ "$EUID" -ne 0 ]
@@ -29,7 +32,7 @@ apt install -y npm cage wlr-randr
 
 # Enter project directory and install necessary components
 # (e.g electron)
-npm install
+su admin -c 'npm install'
 
 # Copy the service to systemd
 cp ./kiosk/setup/billboard.service /etc/systemd/system/
@@ -41,3 +44,5 @@ cp ./kiosk/setup/cage /etc/pam.d/cage
 systemctl daemon-reload
 systemctl enable --now billboard
 
+echo Done, Billboard running on tty1
+echo Manual intervention may be required, if something has gone wrong

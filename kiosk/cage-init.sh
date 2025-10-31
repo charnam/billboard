@@ -9,4 +9,4 @@ fi
 
 # The working directory should be /home/admin/billboard
 # Start Electron application here...
-electron kiosk/electron-main.js
+./kiosk/kiosk.sh

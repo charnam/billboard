@@ -19,6 +19,8 @@ Billboard is designed for vertical displays, but horizontal ones may be supporte
 
 Upstream HTML, JavaScript, and CSS code should make use of *relative file paths* (e.g `./`) wherever fetching content. Content scripts (config/content/content.js) may do either relative or absolute paths, but developers of these scripts should understand that these paths will behave differently depending on how the application is loaded (from a webserver, or in the Electron kiosk mode)
 
+To test the Electron kiosk mode on a non-Pi, run `npm install` in the project root (assuming you have NPMJS and Node.JS installed), and then run `./kiosk/kiosk.sh`
+
 ## License
 
 GNU Affero GPL 3.0 - See LICENSE for more details.

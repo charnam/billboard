@@ -1,5 +1,5 @@
 
-# This systemd service runs Billboard in kiosk mode on tty3.
+# This systemd service runs Billboard in kiosk mode on tty1.
 
 # Adapted from:
 # https://github.com/cage-kiosk/cage/wiki/Starting-Cage-on-boot-with-systemd
@@ -12,8 +12,8 @@ After=systemd-user-sessions.service plymouth-quit-wait.service
 Before=graphical.target
 Wants=dbus.socket systemd-logind.service
 After=dbus.socket systemd-logind.service
-Conflicts=getty@tty3.service
-After=getty@tty3.service
+Conflicts=getty@tty1.service
+After=getty@tty1.service
 
 [Service]
 Type=simple
@@ -24,11 +24,11 @@ WorkingDirectory=/home/admin/billboard/
 
 Restart=always
 
-UtmpIdentifier=tty3
+UtmpIdentifier=tty1
 UtmpMode=user
 
 # A virtual terminal is needed.
-TTYPath=/dev/tty3
+TTYPath=/dev/tty1
 TTYReset=yes
 TTYVHangup=yes
 TTYVTDisallocate=yes
