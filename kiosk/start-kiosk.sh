@@ -5,4 +5,4 @@
 
 # Start the Cage Wayland compositor
 # allowing TTY switching (with -s)
-cage -s -- ./cage-init.sh;
+cage -s -- ./kiosk/cage-init.sh;

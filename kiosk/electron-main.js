@@ -14,10 +14,11 @@ function createWindow () {
         fullscreen: true
     });
 
-    // Note: Current working directory should be the
-    // `billboard/` repository directory, not the
-    // directory that this file is contained in.
-    win.loadFile('index.html');
+    // The working directory should be the root directory
+    // of this project, but Electron seems to instead use
+    // the location of the main JavaScript file to find
+    // HTML content.
+    win.loadFile('../index.html');
 }
 
 app.whenReady().then(() => {
